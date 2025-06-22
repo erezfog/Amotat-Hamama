@@ -1,0 +1,126 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function ImpactSection() {
+  const statistics = [
+    { number: "200+", label: "בתי ספר משתתפים" },
+    { number: "5,000+", label: "מורים שהוכשרו" },
+    { number: "100,000+", label: "תלמידים שהושפעו" },
+    { number: "15+", label: "מאמרי מחקר שפורסמו" },
+  ];
+
+  const testimonials = [
+    {
+      quote: "תוכנית הכשרת המורים שינתה את גישתי למעורבות בכיתה. התלמידים שלי יותר מונעים ומשיגים תוצאות טובות מאי פעם.",
+      author: "שרה כהן",
+      role: "מורה למתמטיקה, תל אביב",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      quote: "משאבי תוכנית הלימודים של המכון היו יקרי ערך עבור בית הספר שלנו. הם משלבים חדשנות עם רלוונטיות תרבותית באופן שמהדהד עם תלמידנו.",
+      author: "דוד לוי",
+      role: "מנהל בית ספר, ירושלים",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      quote: "כפקידה במשרד החינוך, ראיתי ממקור ראשון כיצד תוכניות המאי\"ל מעלות את רמת החינוך בקהילות מגוונות בישראל.",
+      author: "מאיה רוזנברג",
+      role: "יועצת במשרד החינוך",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80"
+    }
+  ];
+
+  return (
+    <section id="impact" className="py-20 bg-gray-50 text-right"> {/* Added text-right */}
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">ההשפעה שלנו</h2>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            אנו גאים בשינוי החיובי שאנו יוצרים בנוף החינוכי של ישראל. התוכניות שלנו מספקות תוצאות מדידות ברחבי הארץ.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          {statistics.map((stat, index) => (
+            <Card key={index} className="border-none shadow-md hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-6 text-center">
+                <h3 className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{stat.number}</h3>
+                <p className="text-gray-600">{stat.label}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mb-20">
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-white shadow-md hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-8">
+                  <svg className="w-10 h-10 text-blue-200 mb-4" fill="currentColor" viewBox="0 0 32 32"> {/* This SVG might need RTL flipping if it has directionality */}
+                    <path d="M9.352 4C4.456 7.456 1.646 13.825 1.646 21.002h5.56c0-5.556 2.919-8.197 6.397-9.115v-7.887h-4.251zM25.647 4c-4.828 3.422-7.707 9.791-7.707 17.002h5.56c0-5.556 2.985-8.197 6.463-9.115v-7.887h-4.316z" />
+                  </svg>
+                  <p className="text-gray-700 mb-6 leading-relaxed italic">{testimonial.quote}</p>
+                  <div className="flex items-center">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.author} 
+                      className="w-12 h-12 rounded-full object-cover ml-4" /* Changed mr-4 to ml-4 */
+                    />
+                    <div>
+                      <h4 className="font-bold text-gray-900">{testimonial.author}</h4>
+                      <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative rounded-xl overflow-hidden">
+          <div className="absolute inset-0 bg-blue-900/90 z-10"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            alt="תלמידים בכיתה"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="relative z-20 p-8 md:p-16 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              מחקר והערכה
+            </h3>
+            <p className="text-gray-100 max-w-3xl mx-auto mb-10 leading-relaxed">
+              עבודתנו נתמכת במחקר קפדני והערכה מתמשכת. אנו משתפים פעולה עם אוניברסיטאות ומוסדות מחקר מובילים למדידת תוצאות ושיפור גישותינו על בסיס ראיות.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <Card className="bg-white/10 backdrop-blur-md border-0 text-white">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-xl mb-2">הישגים אקדמיים</h4>
+                  <p className="opacity-90">
+                    שיפור של 15% בציוני מבחנים סטנדרטיים בבתי ספר משתתפים
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white/10 backdrop-blur-md border-0 text-white">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-xl mb-2">שימור מורים</h4>
+                  <p className="opacity-90">
+                    עלייה של 30% בשביעות רצון מורים ואריכות ימים בקריירה
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white/10 backdrop-blur-md border-0 text-white">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-xl mb-2">מעורבות תלמידים</h4>
+                  <p className="opacity-90">
+                    הפחתה של 40% בהיעדרויות בבתי ספר המזוהים עם התוכנית
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
