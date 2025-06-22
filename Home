@@ -1,0 +1,28 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import HeroSection from "../components/HeroSection";
+import MissionSection from "../components/MissionSection";
+import VideoSection from "../components/VideoSection";
+import ProgramsSection from "../components/ProgramsSection";
+import PartnersSection from "../components/PartnersSection";
+import NewsletterSection from "../components/NewsletterSection";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white" dir="rtl">
+      <Header />
+      <main>
+        <HeroSection />
+        <MissionSection />
+        <VideoSection />
+        <ProgramsSection />
+        <PartnersSection />
+        <NewsletterSection />
+      </main>
+      <Footer />
+    </div>
+  );
+}
