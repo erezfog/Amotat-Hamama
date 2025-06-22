@@ -1,0 +1,152 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function PartnersSection() {
+  const partners = [
+    { name: "משרד החינוך", type: "government", logoUrl: "https://via.placeholder.com/100x50?text=משרד+החינוך" },
+    { name: "סימנס תוכנה", type: "corporate", logoUrl: "https://via.placeholder.com/100x50?text=סימנס" },
+    { name: "אמדוקס", type: "corporate", logoUrl: "https://via.placeholder.com/100x50?text=אמדוקס" },
+    { name: "מכללת לוינסקי לחינוך", type: "academic", logoUrl: "https://via.placeholder.com/100x50?text=לוינסקי" },
+    { name: "חברת המצפן", type: "corporate", logoUrl: "https://via.placeholder.com/100x50?text=המצפן" },
+    { name: "היטאצ'י", type: "corporate", logoUrl: "https://via.placeholder.com/100x50?text=היטאצ'י" },
+    { name: "גלובוס", type: "corporate", logoUrl: "https://via.placeholder.com/100x50?text=גלובוס" },
+    { name: "עמותת 8200", type: "nonprofit", logoUrl: "https://via.placeholder.com/100x50?text=8200" }
+  ];
+
+  return (
+    <section id="partners" className="py-20 bg-white text-right">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">השותפים שלנו</h2>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            אנו משתפים פעולה עם ארגונים מובילים בממשלה, באקדמיה, בתעשייה ובמגזר השלישי כדי למקסם את השפעתנו על מערכת החינוך בישראל.
+          </p>
+        </div>
+
+        <div className="mb-16">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
+            {partners.map((partner, index) => (
+              <div 
+                key={index} 
+                className="bg-gray-50 rounded-lg p-4 flex flex-col items-center justify-center h-40 hover:shadow-md transition-shadow duration-300"
+              >
+                {partner.logoUrl ? (
+                  <img 
+                    src={partner.logoUrl} 
+                    alt={partner.name} 
+                    className="max-h-16 max-w-full object-contain mb-3" 
+                  />
+                ) : (
+                  <div className="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span className="text-blue-600 font-bold text-lg">
+                      {partner.name.split(" ").map(n => n[0]).join("").substring(0,2).toUpperCase()}
+                    </span>
+                  </div>
+                )}
+                <p className="font-medium text-gray-900 text-sm sm:text-base text-center">{partner.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Card className="border-none shadow-xl bg-gradient-to-l from-blue-50 to-indigo-50">
+          <CardContent className="p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-last md:order-first">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                  הצטרפו כשותפים
+                </h3>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  הצטרפו לרשת הארגונים שלנו המחויבים לשינוי החינוך בישראל. בין אם אתם מהממשלה, האקדמיה, התעשייה או המגזר השלישי, אנו מקבלים בברכה שותפויות התואמות את משימתנו.
+                </p>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  אפשרויות שותפות כוללות:
+                </p>
+                <ul className="space-y-3 text-gray-700 mb-8">
+                  <li className="flex items-start">
+                    <span className="text-blue-600 font-bold ml-2">•</span>
+                    מימון תוכניות חינוכיות חדשניות
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 font-bold ml-2">•</span>
+                     התנדבות כמנטורים והרצאות השראה
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 font-bold ml-2">•</span>
+                    יוזמות מחקר משותפות
+                  </li>
+                   <li className="flex items-start">
+                    <span className="text-blue-600 font-bold ml-2">•</span>
+                     אירוח תלמידים לסיור במקום העבודה
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-lg">
+                <h4 className="text-xl font-bold text-gray-900 mb-6">
+                  צרו קשר בנוגע להזדמנויות שותפות
+                </h4>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        שם פרטי
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-right"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        שם משפחה
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-right"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      ארגון
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-right"
+                      />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      אימייל
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-left"
+                      dir="ltr"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      כיצד תרצו לשתף איתנו פעולה?
+                    </label>
+                    <textarea
+                      rows={4}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-right"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300"
+                  >
+                    שלח פנייה
+                  </button>
+                </form>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+}
