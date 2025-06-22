@@ -1,0 +1,60 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react"; // Changed to ArrowLeft for RTL
+
+export default function HeroSection() {
+  return (
+    <section className="relative h-screen flex items-center text-right">
+      {/* Background image with overlay - Updated to show older students (age 16) */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')" 
+          // New image showing high school students around 16 years old
+        }}
+      >
+        {/* Gradient overlay for RTL */}
+        <div className="absolute inset-0 bg-gradient-to-l from-blue-900/80 via-blue-800/70 to-transparent"></div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-3xl">
+          <h5 className="text-blue-300 text-lg md:text-xl font-medium mb-4">המכון הישראלי ל</h5>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+            חדשנות בחינוך
+          </h1>
+          <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed">
+            מעצבים מחדש את פני החינוך בישראל באמצעות חדשנות, טכנולוגיה ומתודולוגיות חשיבה מתקדמות.
+          </p>
+          <div className="flex flex-col sm:flex-row-reverse gap-4">
+            <Button 
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-6 text-lg"
+              onClick={() => {
+                document.getElementById('programs').scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              התוכניות שלנו <ArrowLeft className="mr-2 h-5 w-5" />
+            </Button>
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg"
+              onClick={() => {
+                document.getElementById('mission').scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              למידע נוסף
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+        <span className="text-white text-sm mb-2">גללו להמשך</span>
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
+          <div className="w-1 h-2 bg-white rounded-full animate-bounce-slow"></div>
+        </div>
+      </div>
+    </section>
+  );
+}
