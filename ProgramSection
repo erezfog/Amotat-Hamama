@@ -1,0 +1,119 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, Users, MapPin, Mic, Award } from "lucide-react"; // Changed icons
+
+export default function ProgramsSection() {
+  const programs = [
+    {
+      icon: <Users className="w-10 h-10 text-indigo-500" />,
+      title: "תוכנית מנטורים",
+      description: "חיבור תלמידים עם אנשי מקצוע מובילים בתעשייה המספקים הנחייה אישית וליווי מקצועי.",
+      color: "indigo",
+    },
+    {
+      icon: <MapPin className="w-10 h-10 text-amber-500" />,
+      title: "תוכנית סיורים",
+      description: "סיורים מודרכים בחברות מובילות במשק המאפשרים לתלמידים לחוות את עולם העבודה המודרני.",
+      color: "amber",
+    },
+    {
+      icon: <Mic className="w-10 h-10 text-emerald-500" />, // Changed icon to Mic
+      title: "הרצאות",
+      description: "השראה והעשרה של מנהלים בכירים, מומחים ובעלי תפקידים ממגוון חברות.",
+      color: "emerald",
+    },
+    {
+      icon: <Award className="w-10 h-10 text-rose-500" />, // Changed icon to Award
+      title: "אירועי שיא",
+      description: "אירועים מיוחדים כגון האקתונים, תחרויות ופרויקטים משותפים המעודדים יצירתיות ועבודת צוות.",
+      color: "rose",
+    },
+  ];
+
+  const colorClasses = {
+    indigo: "bg-indigo-50 border-indigo-200 hover:border-indigo-300",
+    amber: "bg-amber-50 border-amber-200 hover:border-amber-300",
+    emerald: "bg-emerald-50 border-emerald-200 hover:border-emerald-300",
+    rose: "bg-rose-50 border-rose-200 hover:border-rose-300",
+  };
+
+  return (
+    <section id="programs" className="py-20 bg-white text-right">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">התוכניות שלנו</h2>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            התוכניות שלנו מגשרות בין עולם החינוך לעולם העסקים, ומכשירות את התלמידים לשוק העבודה העתידי.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {programs.map((program, index) => (
+            <Card 
+              key={index} 
+              className={`border rounded-xl transition-all duration-300 ${colorClasses[program.color]}`}
+            >
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  {program.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">{program.description}</p>
+                <Button variant="ghost" className="group text-gray-700 hover:text-blue-700 p-0">
+                  למידע נוסף <ChevronLeft className="mr-1 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="rounded-xl bg-gradient-to-l from-blue-600 to-indigo-700 p-1">
+          <div className="bg-white rounded-lg p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="order-last md:order-first">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                  תוכנית הדגל: מנטורים מהתעשייה
+                </h3>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  תוכנית הדגל שלנו מחברת תלמידים עם מנטורים מובילים מהתעשייה שמלווים אותם לאורך השנה. המנטורים מספקים הדרכה מקצועית, משתפים מנסיונם בעולם העבודה, ומסייעים לתלמידים להבין את הדרישות והמיומנויות הנדרשות להצלחה במקצועות המחר.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1 ml-3">
+                      <span className="text-blue-600 font-bold text-sm">✓</span>
+                    </div>
+                    <p className="text-gray-700">מפגשי ייעוץ אישיים עם מנהלים מהמשק הישראלי</p>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1 ml-3">
+                      <span className="text-blue-600 font-bold text-sm">✓</span>
+                    </div>
+                    <p className="text-gray-700">סדנאות מיומנויות רכות וכישורי עבודה</p>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1 ml-3">
+                      <span className="text-blue-600 font-bold text-sm">✓</span>
+                    </div>
+                    <p className="text-gray-700">פרויקטים מעשיים בהנחיית מומחים מהתעשייה</p>
+                  </div>
+                </div>
+                <Button className="mt-8 bg-blue-600 hover:bg-blue-700 rounded-full px-6">
+                  הרשמה לתוכנית המנטורים
+                </Button>
+              </div>
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="מנטור מדריך תלמיד בפרויקט" 
+                  className="rounded-lg shadow-lg h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
