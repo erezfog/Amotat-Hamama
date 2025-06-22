@@ -1,0 +1,84 @@
+import React from "react";
+import { Twitter, Facebook, Linkedin, Instagram, Mail, Phone } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white pt-16 pb-8 text-right">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div>
+            <div className="flex items-center justify-end md:justify-start gap-2 mb-6">
+              {/* Removed the span with מי"ח */}
+            </div>
+            <p className="text-gray-400 mb-6">
+              המכון הישראלי לחדשנות בחינוך פועל לשינוי פרקטיקות חינוכיות ברחבי ישראל באמצעות טכנולוגיה, מחקר וחדשנות.
+            </p>
+            <div className="flex space-x-4 space-x-reverse justify-end md:justify-start">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-lg mb-6">קישורים מהירים</h3>
+            <ul className="space-y-4">
+              <li><a href="#mission" className="text-gray-400 hover:text-white transition-colors">המשימה שלנו</a></li>
+              <li><a href="#programs" className="text-gray-400 hover:text-white transition-colors">תוכניות</a></li>
+              <li><a href="#partners" className="text-gray-400 hover:text-white transition-colors">שותפים</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">משאבים</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">חדשות ואירועים</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-lg mb-6">תוכניות</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">יוזמת אוריינות דיגיטלית</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">מעבדות חדשנות</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">פיתוח תכניות לימודים</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">אקדמיה להכשרת מורים</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">יוזמת כיתת העתיד</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-lg mb-6">צרו קשר</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <Phone className="w-5 h-5 text-blue-400 ml-3 flex-shrink-0" />
+                <span className="text-gray-400" dir="ltr">050-2488818</span>
+              </li>
+              <li className="flex items-center">
+                <Mail className="w-5 h-5 text-blue-400 ml-3 flex-shrink-0" />
+                <span className="text-gray-400" dir="ltr">info@amotat-hamama.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row-reverse justify-between items-center">
+            <p className="text-gray-500 text-sm mb-4 md:mb-0">
+              © {new Date().getFullYear()} המכון הישראלי לחדשנות בחינוך. כל הזכויות שמורות.
+            </p>
+            <div className="flex space-x-6 space-x-reverse">
+              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">מדיניות פרטיות</a>
+              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">תנאי שירות</a>
+              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">נגישות</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
